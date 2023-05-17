@@ -10,8 +10,26 @@ spring:
         show_sql: true
     open-in-view: false
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${ADMIN_MAIL_USER}
+    password: ${ADMIN_MAIL_PW}
+    properties:
+      mail:
+        smtp:
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+          auth: true
+          starttls:
+
 server:
   port: 8080
+
+jwt:
+  secret-key: ${JWT_SECRET_KEY}
+  eamil-auth-token-expiration-months: 3
 
 logging:
   level:

@@ -51,7 +51,9 @@ dependencies {
 
             'io.jsonwebtoken:jjwt-api:0.11.5',
 
-            "com.querydsl:querydsl-jpa:${queryDslVersion}"
+            "com.querydsl:querydsl-jpa:${queryDslVersion}",
+
+            'org.springdoc:springdoc-openapi-ui:1.6.12'
     )
 
     compileOnly (

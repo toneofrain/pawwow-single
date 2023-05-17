@@ -10,5 +10,10 @@ spring:
   datasource:
     driver-class-name: org.h2.Driver
     url: ${H2_URL}
-    username: mytly
+    username: pawwow
     password: ${H2_PW}
+
+  redis:
+    host: ${DEV_REDIS_HOST}
+    port: ${DEV_REDIS_PORT}
+

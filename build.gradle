@@ -45,6 +45,7 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-thymeleaf',
             'org.springframework.boot:spring-boot-starter-validation',
             'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-parent:3.0.6',
 
             'org.springframework.kafka:spring-kafka',
 
@@ -62,6 +63,7 @@ dependencies {
 
     annotationProcessor (
             'org.projectlombok:lombok',
+            'org.springframework.boot:spring-boot-configuration-processor',
             "com.querydsl:querydsl-apt:${queryDslVersion}"
     )
 

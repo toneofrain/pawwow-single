@@ -1,4 +1,4 @@
-package dev.saintho.pawwow.configuration;
+package dev.saintho.pawwow.config;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

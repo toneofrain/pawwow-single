@@ -36,7 +36,7 @@ public class Outbox {
 	private Long aggregateId;
 	@Column(nullable = false, updatable = false)
 	@Enumerated(EnumType.STRING)
-	private OutboxEventType type;
+	private OutboxEventType eventType;
 	@Column(columnDefinition = "TEXT", nullable = false, updatable = false)
 	private String payLoad;
 	@CreatedDate
@@ -48,7 +48,7 @@ public class Outbox {
 
 		outbox.aggregateType = event.getAggregateType();
 		outbox.aggregateId = event.getAggregateId();
-		outbox.type = event.getType();
+		outbox.eventType = event.getType();
 		outbox.payLoad = event.getPayLoad();
 
 		return outbox;

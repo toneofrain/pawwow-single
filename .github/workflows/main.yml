@@ -1,0 +1,16 @@
+name: ci
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  setup:
+    name: CI Set Up
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: breakpoint
+        run: ls -al; echo 'Setup is successful!'

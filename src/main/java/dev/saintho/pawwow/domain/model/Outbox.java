@@ -18,7 +18,6 @@ import dev.saintho.pawwow.domain.event.outbox.AggregateType;
 import dev.saintho.pawwow.domain.event.outbox.OutboxEventType;
 import dev.saintho.pawwow.domain.event.outbox.Outboxable;
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

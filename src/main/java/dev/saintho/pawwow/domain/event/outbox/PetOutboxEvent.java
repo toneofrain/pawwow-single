@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Builder;
 
 public class PetOutboxEvent implements Outboxable {
-	private final ObjectMapper objectMapper = new ObjectMapper();
 	private final Long aggregateId;
 	private final OutboxEventType type;
 	private final Object subject;

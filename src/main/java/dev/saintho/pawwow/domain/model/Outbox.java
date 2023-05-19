@@ -14,9 +14,9 @@ import javax.persistence.Id;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import dev.saintho.pawwow.domain.event.AggregateType;
-import dev.saintho.pawwow.domain.event.OutboxEventType;
-import dev.saintho.pawwow.domain.event.Outboxable;
+import dev.saintho.pawwow.domain.event.outbox.AggregateType;
+import dev.saintho.pawwow.domain.event.outbox.OutboxEventType;
+import dev.saintho.pawwow.domain.event.outbox.Outboxable;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

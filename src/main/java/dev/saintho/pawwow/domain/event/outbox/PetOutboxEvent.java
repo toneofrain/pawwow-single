@@ -1,4 +1,4 @@
-package dev.saintho.pawwow.domain.event;
+package dev.saintho.pawwow.domain.event.outbox;
 
 import lombok.Builder;
 

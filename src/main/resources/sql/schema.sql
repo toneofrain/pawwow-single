@@ -4,7 +4,7 @@ USE pawwow;
 
 DROP TABLE IF EXISTS outbox;
 
-DROP TABLE IF EXISTS vote;
+DROP TABLE IF EXISTS pet_vote;
 
 DROP TABLE IF EXISTS pet;
 
@@ -19,7 +19,7 @@ CREATE TABLE pet (
     modified_at TIMESTAMP NOT NULL
 );
 
-CREATE TABLE vote (
+CREATE TABLE pet_vote (
     id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
     pet_id BIGINT UNSIGNED NOT NULL,
     voter VARCHAR(255) NOT NULL,
@@ -34,8 +34,8 @@ CREATE TABLE outbox (
     occurred_at TIMESTAMP NOT NULL
 );
 
-ALTER TABLE vote
-ADD CONSTRAINT fk_pet_vote
+ALTER TABLE pet_vote
+ADD CONSTRAINT fk_pet_pet_vote
 FOREIGN KEY (pet_id)
 REFERENCES pet (id)
 ON DELETE CASCADE;

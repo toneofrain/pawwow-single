@@ -1,4 +1,6 @@
-package dev.saintho.pawwow.domain.event;
+package dev.saintho.pawwow.domain.event.outbox;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.Builder;
 
@@ -30,7 +32,7 @@ public class PetOutboxEvent implements Outboxable {
 	}
 
 	@Override
-	public String getPayLoad() {
-		return subject.toString();
+	public Object getSubject() {
+		return subject;
 	}
 }

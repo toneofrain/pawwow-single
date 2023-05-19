@@ -1,10 +1,8 @@
-package dev.saintho.pawwow.domain.event;
-
-import java.time.LocalDateTime;
+package dev.saintho.pawwow.domain.event.outbox;
 
 public interface Outboxable {
 	AggregateType getAggregateType();
 	Long getAggregateId();
 	OutboxEventType getType();
-	String getPayLoad();
+	Object getSubject();
 }

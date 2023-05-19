@@ -14,9 +14,9 @@ import javax.persistence.Id;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import dev.saintho.pawwow.domain.event.AggregateType;
-import dev.saintho.pawwow.domain.event.OutboxEventType;
-import dev.saintho.pawwow.domain.event.Outboxable;
+import dev.saintho.pawwow.domain.event.outbox.AggregateType;
+import dev.saintho.pawwow.domain.event.outbox.OutboxEventType;
+import dev.saintho.pawwow.domain.event.outbox.Outboxable;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,13 +43,13 @@ public class Outbox {
 	@Column(nullable = false, updatable = false)
 	private LocalDateTime occurredAt;
 
-	public static Outbox from(Outboxable event) {
+	public static Outbox of(Outboxable event, String payLoad) {
 		Outbox outbox = new Outbox();
 
 		outbox.aggregateType = event.getAggregateType();
 		outbox.aggregateId = event.getAggregateId();
 		outbox.eventType = event.getType();
-		outbox.payLoad = event.getPayLoad();
+		outbox.payLoad = payLoad;
 
 		return outbox;
 	}

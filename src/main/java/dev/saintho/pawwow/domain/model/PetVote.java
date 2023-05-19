@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class Vote {
+public class PetVote {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -30,15 +30,19 @@ public class Vote {
 	@JoinColumn(name = "pet_id")
 	private Pet pet;
 
-	public static Vote Of(String voter, Pet pet) {
+	public Long getPetId() {
+		return pet.getId();
+	}
+
+	public static PetVote Of(Pet pet, String voter) {
 		validateVoter(voter);
 		validatePet(pet);
 
-		Vote vote = new Vote();
-		vote.voter = voter;
-		vote.pet = pet;
+		PetVote petVote = new PetVote();
+		petVote.voter = voter;
+		petVote.pet = pet;
 
-		return vote;
+		return petVote;
 	}
 
 	private static void validateVoter(String voter) {

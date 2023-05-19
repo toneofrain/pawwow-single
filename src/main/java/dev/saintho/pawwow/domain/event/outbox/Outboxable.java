@@ -4,5 +4,5 @@ public interface Outboxable {
 	AggregateType getAggregateType();
 	Long getAggregateId();
 	OutboxEventType getType();
-	String getPayLoad();
+	Object getSubject();
 }

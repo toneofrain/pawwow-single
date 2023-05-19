@@ -18,6 +18,7 @@ import dev.saintho.pawwow.domain.event.outbox.AggregateType;
 import dev.saintho.pawwow.domain.event.outbox.OutboxEventType;
 import dev.saintho.pawwow.domain.event.outbox.Outboxable;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -43,13 +44,13 @@ public class Outbox {
 	@Column(nullable = false, updatable = false)
 	private LocalDateTime occurredAt;
 
-	public static Outbox from(Outboxable event) {
+	public static Outbox of(Outboxable event, String payLoad) {
 		Outbox outbox = new Outbox();
 
 		outbox.aggregateType = event.getAggregateType();
 		outbox.aggregateId = event.getAggregateId();
 		outbox.eventType = event.getType();
-		outbox.payLoad = event.getPayLoad();
+		outbox.payLoad = payLoad;
 
 		return outbox;
 	}

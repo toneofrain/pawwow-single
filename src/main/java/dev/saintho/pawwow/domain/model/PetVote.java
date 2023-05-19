@@ -30,6 +30,10 @@ public class PetVote {
 	@JoinColumn(name = "pet_id")
 	private Pet pet;
 
+	public Long getPetId() {
+		return pet.getId();
+	}
+
 	public static PetVote Of(Pet pet, String voter) {
 		validateVoter(voter);
 		validatePet(pet);

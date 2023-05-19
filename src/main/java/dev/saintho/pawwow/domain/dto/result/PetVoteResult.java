@@ -16,7 +16,7 @@ public class PetVoteResult {
 		PetVoteResult result = new PetVoteResult();
 
 		result.petVoteId = petVote.getId();
-		result.petId = petVote.getPet().getId();
+		result.petId = petVote.getPetId();
 		result.voter = petVote.getVoter();
 
 		return result;
